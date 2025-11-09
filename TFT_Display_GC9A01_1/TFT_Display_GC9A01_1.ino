@@ -56,38 +56,59 @@ void setup()
   int Height = 8;
   int InitialY = 120;
   int Y = InitialY; 
+  int X = 0;
+  int Iteration = 0;
   //---------------------------------Размер шрифта 1---------------------------
-  //Ширина символа 6 пикселей
-  //Позиция 120
-  tft.setCursor(0, Y);
-  
-  // Разный размер текста
-  tft.setTextColor(GC9A01A_GREEN);
   tft.setTextSize(1);
-  tft.println("1234567890123456789012345678901234567890");//ширина строки 40 символов
-
-  Y = Y + Height;
-
-  //Позиция 126
-  tft.setCursor(0, Y);
+ 
+  //Ширина символа 6 пикселей
+  String S0 = "1234567890123456789012345678901234567890";
+  //Строка 0
+  tft.setCursor(X, Y);
   tft.setTextColor(GC9A01A_WHITE);
-  tft.println("1234567890123456789012345678901234567890");//ширина строки 40 символов
+  tft.println(S0);//ширина строки 40 символов
 
   Y = Y + Height;
 
-  //Позиция 132
-  tft.setCursor(0, Y);
-  tft.setTextColor(GC9A01A_BLUE);
-  tft.println("1234567890123456789012345678901234567890");//ширина строки 40 символов
+  //Строка 1
+  String S1 = S0;
+  tft.setCursor(X, Y);
+  tft.setTextColor(random(0xFFFF));
+  tft.println(S1);//ширина строки 40 символов
 
   Y = Y + Height;
 
-  //Позиция 132
-  tft.setCursor(0, Y);
-  tft.setTextColor(GC9A01A_RED);
-  tft.println("1234567890123456789012345678901234567890");//ширина строки 40 символов
+  //Строка 2
+  Iteration++;
+  S1 = S0.substring(Iteration, S0.length()- Iteration);
+  X += 6;
+  tft.setCursor(X, Y);
+  tft.setTextColor(random(0xFFFF));
+  tft.println(S1);//ширина строки 38 символов
 
-  
+  Y = Y + Height;
+
+  //Строка 3
+  tft.setCursor(X, Y);
+  tft.setTextColor(random(0xFFFF));
+  tft.println(S1);//ширина строки 38 символов
+
+  Y = Y + Height;
+
+  Iteration++;
+  S1 = S0.substring(Iteration, S0.length()- Iteration);
+  X += 6;
+  tft.setCursor(X, Y);
+  tft.setTextColor(random(0xFFFF));
+  tft.println(S1);//ширина строки 36 символов
+
+  Y = Y + Height;
+
+  //Строка 4
+  tft.setCursor(X, Y);
+  tft.setTextColor(random(0xFFFF));
+  tft.println(S1);//ширина строки 38 символов
+
   
   
 
