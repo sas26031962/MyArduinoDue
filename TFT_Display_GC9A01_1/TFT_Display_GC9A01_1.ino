@@ -109,7 +109,25 @@ void setup()
   tft.setTextColor(random(0xFFFF));
   tft.println(S1);//ширина строки 38 символов
 
-  
+  for(int i = 3; i < 7; i++)
+  {
+    Y = Y + Height;
+
+  //Iteration++;
+    S1 = S0.substring(i, S0.length()- i);
+    X += 6;
+    tft.setCursor(X, Y);
+    tft.setTextColor(random(0xFFFF));
+    tft.println(S1);//ширина строки 36 символов
+
+    Y = Y + Height;
+
+    //Строка 4
+    tft.setCursor(X, Y);
+    tft.setTextColor(random(0xFFFF));
+    tft.println(S1);//ширина строки 38 символов
+  }
+
   
 
 
