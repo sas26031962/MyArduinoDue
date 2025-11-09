@@ -55,17 +55,26 @@ void setup()
   int R = 120;
   int X = 120;
   int Y = 120;
-  tft.drawCircle(60, 120, 30, GC9A01A_GREEN);
+  //tft.drawCircle(60, 120, 30, GC9A01A_GREEN);
   for(int i = 1; i < 6; i++)
   {
     tft.drawCircle(X, Y, R - i, random(0xFFFF));
   }
   //Минутная стрелка
-  tft.fillRect(X, Y - 1, 100, 2, GC9A01A_BLUE);
+  //tft.fillRect(X, Y - 1, 100, 2, GC9A01A_BLUE);
 
   //Часовая стрелка
-  tft.fillRect(X, Y - 1, 2, 50, GC9A01A_RED);
+  //tft.fillRect(X, Y - 1, 2, 50, GC9A01A_RED);
 
+  //Шрифт 4 
+  //10 символов на 240 пикселей (24 пикселя на символ)
+  X = 24;
+  Y = 120 - 12;
+  tft.setCursor(X, Y);
+  tft.setTextColor(GC9A01A_BLUE);
+  tft.setTextSize(4);
+  //tft.println("1234567890");
+  tft.println("12:20:30");
 
 }//End of void setup()
 
